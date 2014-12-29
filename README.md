@@ -13,7 +13,11 @@ Specifications
 
 _Sunny_, _cloudy_, _rain_ and _snow_ indicators are set based on weather conditions provided by the weather app. The small 7-segment display shows minimum temperature in celsius. However, the weather indicators seems to be not that good as the data provided by the API is inconsistent with that displayed in the default weather app. Something will be done soon about this though :)
 The city name, _Montreal_ is a static display for now but there are plans to change that to dynamic city display soon (if there is demand)
-Below the LCD, on the faux panel, the left glass indicator shows current month and date and the right icon is for battery status (refer TODO)
+Below the LCD, on the faux panel, the left glass indicator shows current month and date and the right icon is for battery status
+
+**Battery:**
+
+Battery status is displayed as 5 variants of the battery icon. When battery is below 5% the icon is empty. When it is below 25, its partially filled with red color. At other times, it gradually fills up (changes) at 50, 75 and then at 100%
 
 **Display:**
 
@@ -37,7 +41,7 @@ TODOs
 -----
 * Better and fool-proof weather indicators
 * The plan is to have current temperature displayed instead of minimum temperature (on the right upper corner), however the API does not provide that by default so a workaround is required.
-* Battery Status indicator
+* ~~Battery Status indicator~~
 * Multiple colors and faux backlighting (Timex Indiglo style) of the LCD
 
 Credits
