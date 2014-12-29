@@ -12,11 +12,9 @@ public class LCDClockService extends Service {
 	}
 	public void onCreate() {
 		super.onCreate();
-		System.out.println("service created");
 	}
 
 	public int onStartCommand(Intent intent, int flags, int startId) {
-		System.out.println("service started");
 		return super.onStartCommand(intent, flags, startId);
 	}
 

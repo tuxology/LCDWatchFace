@@ -9,9 +9,11 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.BatteryManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.RemoteViews;
+import android.content.BroadcastReceiver;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -32,7 +34,7 @@ public class WatchFaceLCDClockProvider extends AppWidgetProvider {
 		super.onUpdate(context, appWidgetManager, appWidgetIds);
 		
 		updateWidgets(context);
-	}
+    }
 
 	@Override
 	public void onReceive(Context context, Intent intent) {
@@ -45,6 +47,9 @@ public class WatchFaceLCDClockProvider extends AppWidgetProvider {
 		}
         else if(ACTION_WEATHER_CHANGE.equals(action)){
             updateWeather(context, intent);
+        }
+        else if (Intent.ACTION_BATTERY_CHANGED.equals(action)) {
+            updateBattWidget(context, intent);
         }
     }
 
@@ -63,10 +68,40 @@ public class WatchFaceLCDClockProvider extends AppWidgetProvider {
 		filter.addAction(Intent.ACTION_TIME_CHANGED);
 		filter.addAction(Intent.ACTION_TIME_TICK);
         filter.addAction(ACTION_WEATHER_CHANGE);
-
-		context.getApplicationContext().registerReceiver(this, filter);
+        filter.addAction(Intent.ACTION_BATTERY_CHANGED);
+        filter.addAction(Intent.ACTION_POWER_CONNECTED);
+        context.getApplicationContext().registerReceiver(this, filter);
 	}
-
+    
+    private void updateBattWidget(Context context, Intent intent){
+        AppWidgetManager manager = AppWidgetManager.getInstance(context);
+        RemoteViews views = new RemoteViews(context.getPackageName(),
+                R.layout.lcd_widget);
+        
+        int level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
+        
+        if (level >= 5 && level <= 25){
+            views.setImageViewResource(R.id.batt, R.drawable.batt_4);
+        }
+        else if (level > 25 && level <= 50){
+            views.setImageViewResource(R.id.batt, R.drawable.batt_3);
+        }
+        else if (level > 50 && level <= 75){
+            views.setImageViewResource(R.id.batt, R.drawable.batt_2);
+        }
+        else if (level > 75 && level <= 100){
+            views.setImageViewResource(R.id.batt, R.drawable.batt_1);
+        }
+        else if (level < 5){
+            views.setViewVisibility(R.id.batt, View.INVISIBLE);
+        }
+        
+        //System.out.println(String.valueOf(level));
+        
+        manager.updateAppWidget(new ComponentName(context,
+                WatchFaceLCDClockProvider.class), views);
+    }
+    
 	@SuppressLint({ "SimpleDateFormat", "DefaultLocale" })
 	private void updateWidgets(Context context) {
 		String timeFormat = "HH:mm";

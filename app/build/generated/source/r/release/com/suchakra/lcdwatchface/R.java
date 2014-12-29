@@ -22,15 +22,20 @@ public final class R {
         public static final int _8=0x7f020008;
         public static final int _9=0x7f020009;
         public static final int _minus=0x7f02000a;
-        public static final int bg=0x7f02000b;
-        public static final int cloud=0x7f02000c;
-        public static final int ic_launcher=0x7f02000d;
-        public static final int rain=0x7f02000e;
-        public static final int snow=0x7f02000f;
-        public static final int sun=0x7f020010;
+        public static final int batt_1=0x7f02000b;
+        public static final int batt_2=0x7f02000c;
+        public static final int batt_3=0x7f02000d;
+        public static final int batt_4=0x7f02000e;
+        public static final int bg=0x7f02000f;
+        public static final int cloud=0x7f020010;
+        public static final int ic_launcher=0x7f020011;
+        public static final int rain=0x7f020012;
+        public static final int snow=0x7f020013;
+        public static final int sun=0x7f020014;
     }
     public static final class id {
         public static final int AbsoluteLayout=0x7f070000;
+        public static final int batt=0x7f07000d;
         public static final int cloudy=0x7f070006;
         public static final int date=0x7f07000c;
         public static final int hours_first_value=0x7f070001;
