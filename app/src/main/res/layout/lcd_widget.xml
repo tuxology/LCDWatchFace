@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/AbsoluteLayout"
+    android:layout_width="240px"
+    android:layout_height="240px"
+    android:background="@drawable/bg" >
+
+    <ImageView
+        android:id="@+id/hours_first_value"
+        android:layout_height="wrap_content"
+        android:layout_x="24px"
+        android:layout_y="87px"
+        android:src="@drawable/_0"
+        android:layout_width="wrap_content" />
+    
+    <ImageView
+        android:id="@+id/hours_second_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="73px"
+        android:layout_y="87px"
+        android:src="@drawable/_0" />
+  
+    <ImageView
+        android:id="@+id/minutes_first_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="139px"
+        android:layout_y="87px"
+        android:src="@drawable/_0" />
+
+    <ImageView
+        android:id="@+id/minutes_second_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="188px"
+        android:layout_y="87px"
+        android:src="@drawable/_0" />
+
+    <ImageView
+        android:id="@+id/sunny"
+        android:layout_width="25px"
+        android:layout_height="25px"
+        android:layout_x="22px"
+        android:layout_y="24px"
+        android:src="@drawable/sun" />
+
+    <ImageView
+        android:id="@+id/cloudy"
+        android:layout_width="23px"
+        android:layout_height="23px"
+        android:layout_x="56px"
+        android:layout_y="24px"
+        android:src="@drawable/cloud" />
+
+    <ImageView
+        android:id="@+id/rainy"
+        android:layout_width="24px"
+        android:layout_height="24px"
+        android:layout_x="90px"
+        android:layout_y="24px"
+        android:src="@drawable/rain" />
+
+    <ImageView
+        android:id="@+id/snowy"
+        android:layout_width="24px"
+        android:layout_height="24px"
+        android:layout_x="122px"
+        android:layout_y="24px"
+        android:src="@drawable/snow" />
+
+    <ImageView
+        android:id="@+id/temp_minus"
+        android:layout_width="20px"
+        android:layout_height="wrap_content"
+        android:layout_x="155px"
+        android:layout_y="6px"
+        android:src="@drawable/_minus" />
+
+    <ImageView
+        android:id="@+id/temp_first_val"
+        android:layout_width="20px"
+        android:layout_height="wrap_content"
+        android:layout_x="175px"
+        android:layout_y="4px"
+        android:src="@drawable/_0" />
+
+    <ImageView
+        android:id="@+id/temp_second_val"
+        android:layout_width="20px"
+        android:layout_height="wrap_content"
+        android:layout_x="201px"
+        android:layout_y="4px"
+        android:src="@drawable/_0" />
+    
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="145px"
+        android:layout_height="wrap_content"
+        android:layout_x="17px"
+        android:layout_y="185px"
+        android:gravity="center_horizontal"
+        android:text="NA"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#333333"
+        android:textStyle="bold" />
+    
+</AbsoluteLayout>

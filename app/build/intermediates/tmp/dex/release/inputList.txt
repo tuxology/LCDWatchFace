@@ -1,0 +1,1 @@
+/home/suchakra/AndroidstudioProjects/LCDWatchFace/app/build/intermediates/classes/release
