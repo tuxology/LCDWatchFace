@@ -13,7 +13,6 @@ import android.os.BatteryManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.RemoteViews;
-import android.content.BroadcastReceiver;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -207,7 +206,7 @@ public class WatchFaceLCDClockProvider extends AppWidgetProvider {
                 updateWeatherWidgets(context, "rainy", temp);
             }
             else if (cond.toLowerCase().contains("snow")){
-                updateWeatherWidgets(context, "snow", temp);
+                updateWeatherWidgets(context, "snowy", temp);
             }
             else {
                 updateWeatherWidgets(context, "NA", temp);
